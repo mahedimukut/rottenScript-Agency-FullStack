@@ -1,0 +1,115 @@
+@use "partial";
+
+.contact_form {
+    .success {
+        color: green;
+        margin-top: 15px;
+        font-weight: bold;
+        display: block;
+        text-align: center;
+    }
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5555;
+    background-color: partial.$primary-bg-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .title {
+        margin-bottom: 20px;
+        text-align: center;
+
+        h3 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        span {
+            color: rgba($color: partial.$font-color, $alpha: 1);
+        }
+    }
+
+    .formC {
+
+        input,
+        textarea {
+            width: 400px;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            color: partial.$font-color;
+        }
+
+        button {
+            width: 400px;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            color: partial.$font-color;
+            cursor: pointer;
+            transition: .5s;
+            font-size: 1rem;
+            background: partial.$secondary-bg-color;
+        }
+
+        button:hover {
+            background: green;
+            color: #fff;
+        }
+    }
+
+    .closeB {
+        position: absolute;
+        top: 50px;
+        right: 100px;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        background-color: partial.$extra-font-color;
+        color: #fff;
+        font-size: 1.2rem;
+    }
+}
+
+// media queries in sass
+$media-desktop: "only screen and (max-width : 1024px)";
+$media-tablet: "only screen and (max-width : 768px)";
+$media-mobile: "only screen and (max-width : 600px)";
+$media-mobile-sm: "only screen and (max-width : 480px)";
+$media-mobile-xsm: "only screen and (max-width : 420px)";
+
+
+@media #{$media-desktop} {}
+
+@media #{$media-tablet} {}
+
+@media #{$media-mobile} {}
+
+@media #{$media-mobile-sm} {}
+
+@media #{$media-mobile-xsm} {
+    .formC {
+
+        input,
+        textarea {
+            width: 310px !important;
+        }
+
+        button {
+            width: 310px !important;
+        }
+    }
+
+    .closeB {
+        top: 20px !important;
+    }
+
+}

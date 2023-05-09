@@ -1,0 +1,38 @@
+.auth_container {
+    width: 100vw;
+    height: calc(100vh - 110px);
+
+    .authHold {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        margin: auto;
+        height: calc(100vh - 110px);
+        border-radius: 10px;
+        z-index: 10;
+    }
+}
+
+// media queries in sass
+$media-desktop: "only screen and (max-width : 1024px)";
+$media-tablet: "only screen and (max-width : 768px)";
+$media-mobile: "only screen and (max-width : 600px)";
+$media-mobile-sm: "only screen and (max-width : 480px)";
+
+
+@media #{$media-desktop} {}
+
+@media #{$media-tablet} {}
+
+@media #{$media-mobile} {
+    .authHold {
+        width: 70% !important;
+    }
+}
+
+@media #{$media-mobile-sm} {
+    .authHold {
+        width: 90% !important;
+    }
+}

@@ -1,0 +1,19 @@
+$primary-bg-color: #ffdc60;
+$secondary-bg-color: #89cefb;
+$extra-bg-color: #e74c3c;
+$double-extra-bg: #f5f5dc;
+$font-color: #292930;
+$primary-font-color: #000000;
+$extra-font-color: #e74c3c;
+
+%message-shared {
+    width: 85%;
+    margin: auto;
+}
+
+@mixin theme($fz: 20, $bg: blue) {
+    font-size: $fz+px;
+    font-weight: 400;
+    box-shadow: 10px 10px 10px rgba($primary-font-color, .25);
+    cursor: pointer;
+}

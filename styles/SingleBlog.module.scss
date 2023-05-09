@@ -1,0 +1,56 @@
+@use 'partial';
+
+.container_full {
+    .container {
+        width: 60vw;
+        margin: auto;
+        text-align: left;
+        padding: 100px 0;
+        color: partial.$font-color;
+
+        .imgContainer {
+            width: 60vw;
+            height: 80vh;
+            position: relative;
+            margin: auto;
+
+            img {
+                border-radius: 20px;
+                object-fit: cover;
+            }
+        }
+
+        .timeAgo {
+            margin: 15px 0 15px 0;
+            opacity: .7;
+            font-size: .8rem;
+
+            span {
+                margin-right: 15px;
+            }
+        }
+
+        .title {
+            margin: 20px 0;
+        }
+
+        .desc {
+            line-height: 1.7rem;
+            opacity: .7;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+$media-mobile: "only screen and (max-width : 600px)";
+
+@media #{$media-mobile} {
+    .container {
+        width: 90vw !important;
+    }
+
+    .imgContainer {
+        width: 85vw !important;
+        height: 60vh !important;
+    }
+}

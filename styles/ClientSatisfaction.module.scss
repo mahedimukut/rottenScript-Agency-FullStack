@@ -1,0 +1,173 @@
+@use 'partial';
+
+.container_full {
+    width: 100vw;
+    padding-bottom: 30px;
+
+    .clientArea {
+        width: 85%;
+        margin: auto;
+        padding-top: 100px;
+
+        .clientTitle {
+            margin: auto;
+            margin-bottom: 50px;
+
+            h3 {
+                text-align: center;
+                color: partial.$font-color;
+            }
+        }
+
+        .clientIdentity {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+
+            .singleClient {
+                width: 150px;
+                border: 1px solid #d9d9d9;
+                cursor: pointer;
+                opacity: .8;
+                transition: .5s;
+                border-radius: 5px;
+                padding: 5px;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .container {
+        width: 85%;
+        margin: 0 auto;
+        padding: 100px 0;
+        display: flex;
+        flex-direction: row;
+        gap: 85px;
+        color: partial.$font-color;
+        align-items: center;
+        justify-content: center;
+
+        .bottom {
+            display: flex;
+            gap: 20px;
+            width: 70%;
+            margin: auto;
+
+            .item {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                flex: 1;
+                padding: 20px;
+                border-radius: 10px;
+
+                .left {
+                    .satisfactionIcon {
+                        font-size: 60px;
+                        color: rgba($color: partial.$font-color, $alpha: .3);
+                    }
+                }
+
+                .right {
+                    h3 {
+                        font-size: 30px;
+                        margin-bottom: 7px;
+                        font-weight: 700;
+                    }
+
+                    span {
+                        font-weight: 600;
+                    }
+                }
+
+            }
+
+            .item:nth-of-type(1) {
+                background: partial.$primary-bg-color;
+            }
+
+            .item:nth-of-type(2) {
+                background: partial.$secondary-bg-color;
+            }
+
+            .item:nth-of-type(3) {
+                background: #FFADAD;
+            }
+        }
+    }
+}
+
+
+// media queries in sass
+$media-desktop: "only screen and (max-width : 1024px)";
+$media-tablet: "only screen and (max-width : 768px)";
+$media-mobile: "only screen and (max-width : 600px)";
+$media-mobile-sm: "only screen and (max-width : 480px)";
+
+
+@media #{$media-desktop} {
+    .singleClient {
+        width: 120px !important;
+    }
+
+    .bottom {
+        width: 100% !important;
+    }
+
+    .satisfactionIcon {
+        font-size: 50px !important;
+    }
+}
+
+@media #{$media-tablet} {
+    .left {
+        .satisfactionIcon {
+            font-size: 35px !important;
+        }
+    }
+
+    .right {
+        margin-left: 15px !important;
+
+        h3 {
+            font-size: 20px !important;
+        }
+
+        span {
+            font-weight: 600;
+
+        }
+    }
+}
+
+@media #{$media-mobile} {
+    .container {
+        width: 95% !important;
+    }
+
+    .bottom {
+        gap: 10px !important;
+    }
+}
+
+@media #{$media-mobile-sm} {
+    .bottom {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .item {
+        width: 70% !important;
+    }
+
+    .right {
+        margin-left: 5px !important;
+    }
+}

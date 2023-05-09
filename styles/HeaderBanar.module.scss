@@ -1,0 +1,45 @@
+@use 'partial';
+
+.headerDetails {
+    background: partial.$primary-bg-color;
+
+    .container {
+        width: 85%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 320px;
+
+        .title {
+            flex: 1;
+
+            h3 {
+                margin-top: 15px;
+                line-height: 1.7rem;
+                color: rgba($color: partial.$font-color, $alpha: 0.8)
+            }
+        }
+
+        .info {
+            flex: 2 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
+$media-mobile: "only screen and (max-width : 600px)";
+$media-mobile-xsm: "only screen and (max-width : 420px)";
+
+@media #{$media-mobile} {
+    .title {
+        flex: 2 !important;
+    }
+}
+
+@media #{$media-mobile-xsm} {
+    .title {
+        flex: 2 !important;
+    }
+}

@@ -1,0 +1,65 @@
+@use 'partial';
+
+.container_full {
+    padding: 0 0 150px 0;
+
+    .testimonial {
+        .testimonial_item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-around;
+            gap: 30px;
+            border: 1px solid #d9d9d9;
+            padding: 50px;
+            border-radius: 10px;
+
+            .top {
+                .icon {
+                    color: partial.$primary-bg-color;
+                    margin-right: 5px;
+                }
+            }
+
+            .middle {
+                width: 95%;
+
+                span {
+                    font-size: 1.1rem;
+                    line-height: 1.7rem;
+                }
+            }
+
+            .bottom {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                .client {
+                    font-weight: bold;
+                }
+
+                .company {
+                    font-size: .9rem;
+                    opacity: .6;
+                }
+            }
+        }
+    }
+}
+
+
+// media queries in sass
+$media-desktop: "only screen and (max-width : 1024px)";
+$media-tablet: "only screen and (max-width : 768px)";
+$media-mobile: "only screen and (max-width : 600px)";
+$media-mobile-sm: "only screen and (max-width : 480px)";
+
+
+@media #{$media-desktop} {}
+
+@media #{$media-tablet} {}
+
+@media #{$media-mobile} {}
+
+@media #{$media-mobile-sm} {}

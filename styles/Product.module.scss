@@ -1,0 +1,122 @@
+@use 'partial';
+
+.productSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 100px 0;
+    width: 100%;
+
+    .singleProduct {
+        width: 100%;
+
+        .singleProductContent {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 50px;
+            width: 85%;
+            margin: auto;
+
+            .pLeft {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 50px;
+                flex: 2;
+
+                h1 {
+                    font-size: 70px;
+                    color: partial.$extra-font-color;
+                }
+
+                p {
+                    width: 70%;
+                    line-height: 1.7rem;
+                    text-align: center;
+                    color: partial.$font-color;
+                }
+
+                span {
+                    text-decoration: underline;
+                    color: rgba($color: partial.$font-color, $alpha: .7);
+                    cursor: pointer;
+                }
+            }
+
+            .pRight {
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    .singleProduct:nth-of-type(even) {
+        background: #f5efef;
+
+        .pLeft {
+            order: 2;
+
+            h1 {
+                color: partial.$font-color;
+            }
+        }
+    }
+}
+
+// media queries in sass
+$media-desktop: "only screen and (max-width : 1024px)";
+$media-tablet: "only screen and (max-width : 768px)";
+$media-mobile: "only screen and (max-width : 600px)";
+$media-mobile-sm: "only screen and (max-width : 480px)";
+
+
+@media #{$media-desktop} {}
+
+@media #{$media-tablet} {
+    .productSection {
+        padding: 35px !important;
+    }
+
+    .singleProductContent {
+        flex-direction: column !important;
+        gap: 10px !important;
+        padding: 30px 0 50px 0;
+
+        .singleProduct:nth-of-type(even) {
+            background: #f5efef;
+
+            .pLeft {
+                order: 1 !important;
+            }
+
+            .pRight {
+                order: 2 !important;
+            }
+        }
+
+        .pRight {
+            order: 2 !important;
+        }
+    }
+
+
+}
+
+@media #{$media-mobile} {}
+
+@media #{$media-mobile-sm} {
+    .pLeft {
+        gap: 20px !important;
+
+        h1 {
+            font-size: 50px !important;
+        }
+    }
+}

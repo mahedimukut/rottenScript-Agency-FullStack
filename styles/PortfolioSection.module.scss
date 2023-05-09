@@ -1,0 +1,120 @@
+@use 'partial';
+
+.container_full {
+    width: 100vw;
+    padding: 150px 0 150px 0;
+    background-image: url('/bg.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .recentWork {
+        margin-top: 50px;
+
+        .portfolio {
+            .box {
+                opacity: 0;
+            }
+
+            .portfolio_top {
+                position: relative;
+
+                img {
+                    border-radius: 10px;
+                }
+
+                &:hover {
+
+                    .portfolio_text {
+                        opacity: 1;
+                    }
+                }
+
+                .portfolio_text {
+                    position: absolute;
+                    z-index: 2;
+                    background-color: antiquewhite;
+                    top: 50%;
+                    left: 35%;
+                    opacity: 0;
+                    transition: .5s;
+                    padding: 30px 50px;
+                    border-radius: 10px;
+
+                    h3 {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+
+        .showButton {
+            width: 180px;
+            margin: 0 auto;
+        }
+
+        .showAllwork {
+            background-color: partial.$secondary-bg-color;
+            border: none;
+            padding: 15px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 50px;
+            cursor: pointer;
+            transition: .5s;
+            font-weight: 600;
+
+            &:hover {
+                background-color: partial.$primary-bg-color;
+            }
+
+        }
+    }
+
+    .container {
+        width: 85%;
+        margin: 0 auto;
+
+        .headText {
+            text-align: center;
+            font-size: 4rem;
+            line-height: 5.2rem;
+            color: partial.$font-color;
+        }
+    }
+}
+
+// media queries in sass
+$media-desktop: "only screen and (max-width : 1024px)";
+$media-tablet: "only screen and (max-width : 768px)";
+$media-mobile: "only screen and (max-width : 600px)";
+$media-mobile-sm: "only screen and (max-width : 480px)";
+$media-mobile-xsm: "only screen and (max-width : 420px)";
+
+
+@media #{$media-desktop} {}
+
+@media #{$media-tablet} {
+    .headText {
+        font-size: 2rem !important;
+        line-height: 3rem !important;
+    }
+}
+
+@media #{$media-mobile} {
+    .container {
+        margin-top: 100px !important;
+    }
+}
+
+@media #{$media-mobile-sm} {
+    .container {
+        margin-top: 200px !important;
+    }
+}
+
+
+@media #{$media-mobile-xsm} {
+    .container {
+        margin-top: 320px !important;
+    }
+}

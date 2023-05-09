@@ -1,0 +1,232 @@
+@use 'partial';
+
+.container_full {
+    width: 100vw;
+    color: partial.$font-color;
+
+    .container {
+        display: flex;
+        width: 85%;
+        height: 110px;
+        margin: 0 auto;
+        align-items: center;
+        text-align: center;
+
+        .left {
+            flex: 1.5;
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: left;
+
+            h1 {
+                cursor: pointer;
+
+                span {
+                    color: partial.$extra-font-color;
+                }
+            }
+        }
+
+        .middle {
+            flex: 3;
+
+            .bars {
+                display: none;
+            }
+
+            .open {
+                display: block;
+            }
+
+            .close {
+                display: none;
+            }
+
+            .navbar {
+                display: flex;
+
+                ul {
+                    display: flex;
+
+                    li {
+                        list-style: none;
+                        margin-right: 50px;
+                        cursor: pointer;
+                        font-weight: 700;
+                        transition: all 0.5s;
+
+                        &:hover {
+                            color: rgba($color: partial.$font-color, $alpha: .5)
+                        }
+
+                        .active {
+                            color: red;
+                        }
+                    }
+
+                    .active {
+                        color: red;
+                    }
+
+                }
+            }
+        }
+
+        .right {
+            flex: 1.2;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 20px;
+
+            .workTogether {
+                background-color: partial.$secondary-bg-color;
+                border: none;
+                padding: 15px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-weight: 600;
+                transition: .5s;
+
+                &:hover {
+                    background-color: partial.$primary-bg-color;
+                }
+            }
+
+            span {
+                cursor: pointer;
+                font-weight: 600;
+                transition: all 0.5s;
+                font-size: .9rem;
+
+                &:hover {
+                    color: rgba($color: partial.$font-color, $alpha: .5);
+                }
+            }
+
+        }
+    }
+}
+
+// media queries in sass
+$media-desktop: "only screen and (max-width : 1024px)";
+$media-tablet: "only screen and (max-width : 768px)";
+$media-mobile: "only screen and (max-width : 600px)";
+$media-mobile-sm: "only screen and (max-width : 480px)";
+$media-mobile-xsm: "only screen and (max-width : 420px)";
+
+
+@media #{$media-desktop} {
+    .container {
+        margin-bottom: 20px !important;
+    }
+
+    .left {
+        flex: 1 !important
+    }
+
+    .middle {
+        flex: 2.7 !important
+    }
+
+    .right {
+        flex: 1.5 !important
+    }
+
+    .bars {
+        display: block !important;
+        float: right;
+        margin-right: 30px;
+        font-size: 24px;
+        border: 1px solid #d9d9d9;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .open {
+        display: none !important;
+    }
+
+    .close {
+        display: block !important;
+    }
+
+    .navbar {
+        display: flex;
+
+        ul {
+            flex-direction: column;
+            position: absolute;
+            top: 90px;
+            background: #89cefb;
+            right: 302px;
+            z-index: 111111;
+            border-radius: 5px;
+
+            li {
+                width: 200px;
+                padding: 30px 0;
+                font-size: 20px;
+                font-weight: 500;
+            }
+        }
+
+        .active {
+            color: red;
+        }
+
+    }
+}
+
+@media #{$media-tablet} {}
+
+@media #{$media-mobile} {
+    .navbar {
+
+        ul {
+            top: 90px;
+            right: 214px !important;
+        }
+    }
+}
+
+@media #{$media-mobile-sm} {
+    .navbar {
+
+        ul {
+            right: 95px !important;
+        }
+    }
+
+    .left {
+
+        h1 {
+            font-size: 1.6rem !important;
+        }
+    }
+}
+
+@media #{$media-mobile-xsm} {
+    .left {
+
+        h1 {
+            font-size: 1.4rem !important;
+            margin-right: 10px;
+        }
+    }
+
+    .container {
+        width: 95% !important;
+    }
+
+    .workTogether {
+        padding: 10px !important;
+    }
+
+    .navbar {
+        ul {
+            right: 40px !important;
+        }
+    }
+}
